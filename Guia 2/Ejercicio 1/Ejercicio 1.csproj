@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AF1C162A-71E9-4A67-853C-9B2BD451ABA1}</ProjectGuid>
+    <ProjectGuid>{AECD69B1-CEE7-4D23-9B83-D6878B8AA953}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Ejercicio_1</RootNamespace>
     <AssemblyName>Ejercicio 1</AssemblyName>
@@ -52,11 +52,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Incidentes.cs">
+    <Compile Include="ListaIncidentes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Incidentes.Designer.cs">
-      <DependentUpon>Incidentes.cs</DependentUpon>
+    <Compile Include="ListaIncidentes.Designer.cs">
+      <DependentUpon>ListaIncidentes.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Comisaria.cs" />
     <Compile Include="Models\Guardia.cs" />
@@ -68,8 +68,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Incidentes.resx">
-      <DependentUpon>Incidentes.cs</DependentUpon>
+    <EmbeddedResource Include="ListaIncidentes.resx">
+      <DependentUpon>ListaIncidentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

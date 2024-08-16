@@ -1,45 +1,55 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections;
+using System.Windows.Forms.VisualStyles;
 
 namespace Ejercicio_1.Models
 {
     internal class Incidente
     {
-        private string motivo;
-        private int hora;
-        private int minuto;
-        private string tipoincidente;
-        private Persona sujeto;
-        private Policia oficial;
-        public string Motivo { get; set; }
-        public int Hora { get; set; }
-        public int Minuto { get; set; }
-        public string Tipoincidente { get; set; }
-        public Persona Sujeto { get; }
-        public Policia Oficial  { get; }
-       
-        public Incidente(Policia oficial, Persona sujeto, string tipoincidente, int minuto, int hora, string motivo)
+        public string motivo { get; set; }
+        public int hora { get; set; }
+        public int minuto { get; set; }
+        public int tipoincidente { get; private set; }
+        public Persona sujeto { get; private set; }
+        public Policia oficialacargo { get; private set; }
+
+        public Incidente(Policia oficial, int tipoincidente, Persona sujeto, string motivo, int h, int m)
         {
-            this.sujeto = sujeto;
-            this.oficial = oficial;
+            this.oficialacargo = oficial;
             this.tipoincidente = tipoincidente;
-            this.minuto = minuto;
-            this.hora = hora;
+            this.sujeto = sujeto;
             this.motivo = motivo;
-
+            hora = h;
+            minuto = m;
         }
 
-        public string verdescripcion()
+        public string VerDatos()
         {
-            return $"Tipo de incidente: {tipoincidente}, Motivo: {motivo}, Oficial a cargo: {oficial.Nombre}, Persona denunciante: {sujeto.Nombre}";
-
+            string datos = "";
+            switch (tipoincidente)
+            {
+                case 0:
+                    {
+                        datos = $"Tipo incidente: Robo, Motivo: {motivo}, Horarios: {hora}: {minuto}hs, Policia: {oficialacargo}, Sujeto: {sujeto}";
+                    }
+                    break;
+                case 1:
+                    {
+                        datos = $"Tipo incidente: Homicidio, Motivo: {motivo}, Horarios: {hora}: {minuto}hs, Policia: {oficialacargo}, Sujeto: {sujeto}";
+                    }
+                    break;
+                case 2:
+                    {
+                        datos = $"Tipo incidente: Disturbio Publico, Motivo: {motivo}, Horarios: {hora}: {minuto}hs, Policia: {oficialacargo}, Sujeto: {sujeto}";
+                    }
+                    break;
+            }
+            return datos;
         }
-
-
-
     }
+
 }

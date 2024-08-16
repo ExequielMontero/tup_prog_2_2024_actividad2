@@ -1,38 +1,39 @@
-﻿using System;
+﻿using Microsoft.Win32.SafeHandles;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Ejercicio_1.Models
 {
     internal class Guardia
     {
-        private int horadesde;
-        private int minutodesde;
-        private int horahasta;
-        private int minutohasta;
-        private int cantidadminutos;
-        private Policia oficial;
+        public int horadesde { get; private set; }
+        public int minutodesde { get; private set; }
+        public int horahasta { get; private set; }
+        public int minutohasta { get; private set;}
+        public int cantidadminutos { get; private set; }
+        public Policia oficialasignado { get; private set; }
 
-        public int Horadesde { get; }
-        public int Minutodesde { get; }
-        
-        public int Horahasta { get; }
-        public int Minutohasta { get; }
-        public int Cantidadminutos { get; }
 
         public Guardia()
         {
+
         }
 
-        public void AsignarPolicia(Policia oficialenturno, int horaen, int minuent, int totalminutos)
+        public void AsignarPolicia(Policia oficial, int h, int m, int cantm)
         {
-            horadesde = horaen;
-            minutodesde = minuent;
-            oficial = oficialenturno;
-            cantidadminutos = totalminutos;
+            
+                oficialasignado = oficial;
+                horadesde = h;
+                minutodesde = m;
+                cantidadminutos = cantm;
+
+
         }
+
 
     }
 }

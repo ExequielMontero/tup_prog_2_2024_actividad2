@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,13 +9,10 @@ namespace Ejercicio_1.Models
 {
     internal class Policia
     {
-        private int dni;
-        private string nombre;
-        private int numeroplaca;
+        public int dni { get; private set; }
+        public string nombre { get; private set; }
+        public int numeroplaca { get; private set; }
 
-        public int Dni { get; private set;}
-        public int Nombre { get; private set; }
-        public int Numeroplaca { get; private set; }
         public Policia(int dni, string nombre, int numeroplaca)
         {
             this.dni = dni;
@@ -22,6 +20,10 @@ namespace Ejercicio_1.Models
             this.numeroplaca = numeroplaca;
         }
 
+        public string VerDatos()
+        {
+            return $"Policia: {nombre}, Dni: {dni}, Numero de placa: {numeroplaca}";
+        }
 
     }
 }
